@@ -1,0 +1,1454 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&family=Noto+Sans+Tamil:wght@400;500;600;700&display=swap');
+
+:root {
+  --bg: #faf9f5;
+  --surface: #ffffff;
+  --text: #182a25;
+  --muted: #69766e;
+  --green: #276747;
+  --green-light: #e9f0e6;
+  --line: #e6e7de;
+  --cream: #f2ead9;
+  --gold: #c7a66a;
+  --shadow: 0 12px 40px #1c34220a;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: "DM Sans", sans-serif;
+  line-height: 1.7;
+  transition: background .3s, color .3s;
+}
+
+button, a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+::selection {
+  background: #cbdcc6;
+  color: #193c2a;
+}
+
+/* =========================
+   MAIN NAVIGATION
+   ========================= */
+
+.navbar {
+  min-height: 78px;
+  padding: 12px 7%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--bg);
+  border-bottom: 1px solid var(--line);
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  gap: 25px;
+  backdrop-filter: blur(15px);
+}
+
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 19px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  flex-shrink: 0;
+}
+
+.logo-icon {
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  color: white;
+  background: var(--green);
+  font-family: "Noto Sans Tamil", sans-serif;
+  font-size: 18px;
+}
+
+.logo-dot {
+  color: #a5b96e;
+}
+
+.navbar nav {
+  display: flex;
+  align-items: center;
+  gap: clamp(12px, 2vw, 28px);
+}
+
+.navbar nav a {
+  font-size: 12px;
+  color: var(--muted);
+  transition: color .2s;
+}
+
+.navbar nav a:hover {
+  color: var(--green);
+}
+
+.theme-toggle {
+  width: 38px;
+  height: 38px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  color: var(--text);
+  font-size: 19px;
+}
+
+/* =========================
+   COMMON ELEMENTS
+   ========================= */
+
+.eyebrow {
+  font-size: 10px;
+  letter-spacing: 2px;
+  font-weight: 700;
+  color: var(--green);
+}
+
+.section-padding {
+  padding: 100px 10%;
+}
+
+.section-heading h2,
+.final-section h2 {
+  font-family: "Playfair Display", serif;
+  font-weight: 500;
+  font-size: clamp(32px, 4vw, 49px);
+  letter-spacing: -1.4px;
+  line-height: 1.2;
+  margin: 15px 0;
+}
+
+.section-heading h2 span,
+.final-section h2 span {
+  color: var(--green);
+  font-style: italic;
+}
+
+.section-description {
+  max-width: 580px;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.9;
+  margin-top: 15px;
+}
+
+.centered {
+  text-align: center;
+}
+
+.centered .section-description {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  border-radius: 4px;
+  padding: 13px 20px;
+  font-size: 12px;
+  font-weight: 600;
+  border: 0;
+  transition: transform .2s, background .2s;
+}
+
+.button:hover {
+  transform: translateY(-2px);
+}
+
+.button-primary {
+  color: white;
+  background: var(--green);
+}
+
+.button-primary:hover {
+  background: #194d34;
+}
+
+.text-link {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.text-link:hover {
+  color: var(--green);
+}
+
+/* =========================
+   SLIDE 1 — HERO
+   ========================= */
+
+.hero {
+  min-height: 610px;
+  padding: 75px 10% 85px;
+  display: grid;
+  grid-template-columns: 1.05fr .95fr;
+  align-items: center;
+  gap: 50px;
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse at 78% 48%, #e3eadc 0, transparent 35%),
+    var(--bg);
+}
+
+.hero h1 {
+  margin: 24px 0;
+  font-family: "Playfair Display", serif;
+  font-weight: 500;
+  letter-spacing: -2.5px;
+  line-height: 1.06;
+  font-size: clamp(46px, 5.4vw, 76px);
+}
+
+.hero h1 span {
+  color: var(--green);
+  font-style: italic;
+}
+
+.hero-description {
+  max-width: 450px;
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.95;
+}
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+.hero-note {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--muted);
+  font-size: 11px;
+  margin-top: 38px;
+}
+
+.note-line {
+  width: 25px;
+  height: 1px;
+  background: var(--gold);
+}
+
+.hero-art {
+  min-height: 420px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.orbit {
+  position: absolute;
+  border: 1px solid #a6b99d60;
+  border-radius: 50%;
+  width: 360px;
+  height: 360px;
+}
+
+.orbit-two {
+  width: 290px;
+  height: 290px;
+  border-style: dashed;
+}
+
+.art-label {
+  position: absolute;
+  top: 25px;
+  right: 0;
+  font-size: 9px;
+  letter-spacing: 1.5px;
+  color: var(--green);
+}
+
+.book-scene {
+  position: relative;
+  width: 340px;
+  height: 300px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 55px;
+}
+
+.glow {
+  position: absolute;
+  width: 210px;
+  height: 210px;
+  top: 15px;
+  border-radius: 50%;
+  background: #d7e5c8;
+  filter: blur(35px);
+}
+
+.plant {
+  position: absolute;
+  z-index: 3;
+  width: 10px;
+  height: 185px;
+  bottom: 108px;
+  left: calc(50% - 5px);
+}
+
+.plant-stem {
+  position: absolute;
+  width: 3px;
+  height: 185px;
+  left: 4px;
+  background: #46794c;
+  border-radius: 100%;
+}
+
+.leaf {
+  position: absolute;
+  z-index: 2;
+  width: 37px;
+  height: 21px;
+  background: linear-gradient(135deg, #8cae6b, #28633e);
+  border-radius: 100% 0 100% 0;
+}
+
+.leaf-one { top: 18px; left: -30px; transform: rotate(20deg); }
+.leaf-two { top: 48px; left: 4px; transform: rotate(-50deg); }
+.leaf-three { top: 78px; left: -33px; transform: rotate(20deg); }
+.leaf-four { top: 104px; left: 4px; transform: rotate(-50deg); }
+
+.book {
+  position: absolute;
+  z-index: 4;
+  bottom: 42px;
+  width: 320px;
+  height: 105px;
+  filter: drop-shadow(0 18px 14px #33442a20);
+}
+
+.book-left,
+.book-right {
+  position: absolute;
+  width: 50%;
+  height: 80px;
+  bottom: 0;
+  background: repeating-linear-gradient(
+    to bottom,
+    #f9f5e8 0,
+    #f9f5e8 7px,
+    #d8cfb8 8px,
+    #f9f5e8 9px
+  );
+  border: 1px solid #b7aa8d;
+}
+
+.book-left {
+  left: 0;
+  border-radius: 7px 0 4px 9px;
+  transform: skewY(9deg);
+  transform-origin: right bottom;
+}
+
+.book-right {
+  right: 0;
+  border-radius: 0 7px 9px 4px;
+  transform: skewY(-9deg);
+  transform-origin: left bottom;
+}
+
+.book-spine {
+  position: absolute;
+  width: 8px;
+  height: 82px;
+  bottom: 0;
+  left: calc(50% - 4px);
+  background: #c7b58f;
+  border-radius: 3px;
+}
+
+.art-caption {
+  position: absolute;
+  bottom: 2px;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 15px;
+  border: 1px solid #ffffffa6;
+  background: #ffffffa6;
+  border-radius: 7px;
+  backdrop-filter: blur(10px);
+}
+
+.caption-icon {
+  font-size: 25px;
+  color: var(--green);
+}
+
+.art-caption strong {
+  font-size: 11px;
+}
+
+.art-caption p {
+  color: var(--muted);
+  font-size: 10px;
+  margin-top: 3px;
+}
+
+.hero-index {
+  position: absolute;
+  bottom: 25px;
+  right: 7%;
+  color: var(--muted);
+  font-size: 9px;
+  letter-spacing: 2px;
+}
+
+/* =========================
+   SLIDE 2 — THIRUKKURAL
+   ========================= */
+
+.kural-section {
+  background: var(--surface);
+  display: grid;
+  grid-template-columns: .7fr 1.3fr;
+  align-items: center;
+  gap: 65px;
+}
+
+.kural-card {
+  position: relative;
+  background: var(--cream);
+  padding: 45px;
+  border: 1px solid #e9dfcb;
+  border-radius: 5px;
+}
+
+.quote-symbol {
+  position: absolute;
+  top: -24px;
+  right: 25px;
+  font-family: Georgia, serif;
+  font-size: 100px;
+  line-height: 1;
+  color: #d2c19c;
+}
+
+.kural-number {
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: var(--green);
+  font-weight: 700;
+  margin-bottom: 22px;
+}
+
+.tamil-kural {
+  font-family: "Noto Sans Tamil", sans-serif;
+  font-size: clamp(17px, 2vw, 25px);
+  line-height: 2;
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+
+.kural-divider {
+  height: 1px;
+  background: #d7cbb2;
+  margin: 24px 0;
+}
+
+.kural-meaning {
+  font-family: "Playfair Display", serif;
+  font-size: 21px;
+  line-height: 1.55;
+}
+
+.kural-explanation {
+  margin-top: 16px;
+  color: #68685b;
+  font-size: 12px;
+  line-height: 2;
+}
+
+.kural-author {
+  display: block;
+  margin-top: 20px;
+  font-size: 12px;
+  color: var(--green);
+}
+
+/* =========================
+   SLIDE 3 — TRUE WEALTH
+   ========================= */
+
+.wealth-section {
+  background: #f2f4ed;
+}
+
+.comparison {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 25px;
+  margin-top: 55px;
+}
+
+.comparison-card {
+  padding: 35px;
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  box-shadow: var(--shadow);
+}
+
+.comparison-card.knowledge {
+  background: #eaf1e5;
+  border-color: #d6e2ce;
+}
+
+.comparison-icon {
+  font-size: 30px;
+  color: var(--green);
+}
+
+.card-kicker {
+  margin-top: 20px;
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: var(--muted);
+}
+
+.comparison-card h3 {
+  font-family: "Playfair Display", serif;
+  font-size: 27px;
+  font-weight: 500;
+  margin: 10px 0;
+}
+
+.comparison-card > p:not(.card-kicker) {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.comparison-points {
+  margin-top: 25px;
+  padding-top: 18px;
+  border-top: 1px solid #dfe4d9;
+}
+
+.comparison-points p {
+  margin: 10px 0;
+  font-size: 12px;
+}
+
+.comparison-card.knowledge .comparison-points p {
+  color: #24583b;
+}
+
+.card-foot {
+  display: block;
+  margin-top: 25px;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--green);
+}
+
+.wealth-statement {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  margin-top: 50px;
+  text-align: center;
+}
+
+.wealth-statement > span {
+  color: var(--gold);
+  font-size: 28px;
+}
+
+.wealth-statement p {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.wealth-statement strong {
+  color: var(--text);
+}
+
+/* =========================
+   SLIDE 4 — KNOWLEDGE IN ACTION
+   ========================= */
+
+.wisdom-section {
+  background: var(--surface);
+}
+
+.wisdom-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 45px;
+}
+
+.wisdom-card {
+  padding: 25px 20px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: #fff;
+  cursor: pointer;
+  transition: transform .25s, box-shadow .25s, border-color .25s;
+}
+
+.wisdom-card:hover,
+.wisdom-card:focus-visible {
+  transform: translateY(-5px);
+  border-color: #b8cbb0;
+  box-shadow: var(--shadow);
+  outline: none;
+}
+
+.wisdom-number {
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: var(--muted);
+}
+
+.wisdom-icon {
+  margin: 20px 0;
+  font-size: 30px;
+  color: var(--green);
+}
+
+.wisdom-card h3 {
+  font-family: "Playfair Display", serif;
+  font-size: 21px;
+  line-height: 1.3;
+  font-weight: 500;
+}
+
+.wisdom-card > p {
+  margin-top: 12px;
+  font-size: 12px;
+  line-height: 1.9;
+  color: var(--muted);
+}
+
+.wisdom-detail {
+  display: none;
+  margin-top: 20px;
+  padding-top: 15px;
+  border-top: 1px solid var(--line);
+  font-size: 12px;
+}
+
+.wisdom-detail p {
+  margin-top: 6px;
+  color: var(--muted);
+}
+
+.wisdom-card.active .wisdom-detail {
+  display: block;
+}
+
+.discover-label {
+  display: block;
+  margin-top: 22px;
+  color: var(--green);
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.interaction-hint {
+  margin-top: 30px;
+  text-align: center;
+  font-size: 9px;
+  letter-spacing: 2px;
+  color: var(--muted);
+}
+
+/* ============================================
+   FOURTH SLIDE — THE STUDENT'S WEALTH
+   All styles here are scoped to this slide.
+   ============================================ */
+
+.student-wealth-slide {
+  --wealth-bg: #1b140f;
+  --wealth-gold: #d5b56f;
+  --wealth-cream: #f0dcb7;
+
+  position: relative;
+  min-height: 790px;
+  overflow: hidden;
+  isolation: isolate;
+  color: var(--wealth-cream);
+  background:
+    radial-gradient(ellipse at 52% 62%, #50371d40, transparent 42%),
+    radial-gradient(ellipse at 80% 48%, #6d4a1c22, transparent 30%),
+    var(--wealth-bg);
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.student-wealth-slide .wealth-navbar {
+  min-height: 108px;
+  padding: 15px 7%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 25px;
+  border-bottom: 1px solid #c7a35b20;
+  position: relative;
+  z-index: 5;
+}
+
+.student-wealth-slide .wealth-brand {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: var(--wealth-gold);
+  flex-shrink: 0;
+}
+
+.student-wealth-slide .brand-tamil {
+  font-family: "Noto Sans Tamil", serif;
+  font-size: 29px;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.student-wealth-slide .brand-english {
+  font-size: 9px;
+  letter-spacing: 3px;
+  color: #a99b82;
+}
+
+.student-wealth-slide .wealth-navigation {
+  display: flex;
+  flex-wrap: wrap;
+  gap: clamp(20px, 3vw, 45px);
+}
+
+.student-wealth-slide .wealth-navigation a {
+  text-decoration: none;
+  color: #a99b8b;
+  font-family: "Noto Sans Tamil", serif;
+  font-size: 15px;
+  transition: color .25s;
+}
+
+.student-wealth-slide .wealth-navigation a:hover {
+  color: var(--wealth-gold);
+}
+
+.student-wealth-slide .wealth-stage {
+  position: relative;
+  width: 100%;
+  min-height: 680px;
+}
+
+/* Left: stacked books */
+
+.student-wealth-slide .stacked-books {
+  position: absolute;
+  width: 300px;
+  left: 11.5%;
+  top: 420px;
+  z-index: 3;
+  transform: rotate(-1deg);
+}
+
+.student-wealth-slide .stack-book {
+  height: 67px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 0 18px;
+  border: 1px solid #b99859;
+  margin-top: -1px;
+  box-shadow: 0 7px 14px #0003;
+}
+
+.student-wealth-slide .stack-book span {
+  font-family: "Noto Sans Tamil", serif;
+  font-size: 23px;
+}
+
+.student-wealth-slide .stack-book small {
+  font-size: 9px;
+  letter-spacing: 1.5px;
+}
+
+.student-wealth-slide .book-knowledge {
+  background: #4b301b;
+  transform: rotate(-3deg);
+}
+
+.student-wealth-slide .book-education {
+  background: #6d4a27;
+  transform: rotate(1deg);
+}
+
+.student-wealth-slide .book-wisdom {
+  background: #ad8645;
+  color: #24190f;
+  transform: rotate(-.5deg);
+}
+
+/* Center: open book */
+
+.student-wealth-slide .open-book-area {
+  position: absolute;
+  left: 32.5%;
+  top: 265px;
+  width: 520px;
+  height: 330px;
+  z-index: 2;
+  perspective: 1200px;
+}
+
+.student-wealth-slide .book-page {
+  position: absolute;
+  width: 275px;
+  height: 285px;
+  top: -8px;
+  left: 13px;
+  background: #f4dfb9;
+  border-radius: 2px;
+  transform: rotate(-5deg);
+  box-shadow: 0 10px 20px #0004;
+}
+
+.student-wealth-slide .open-book {
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: 280px;
+  margin-top: 35px;
+  filter: drop-shadow(0 20px 18px #0005);
+  transform: rotate(-.5deg);
+}
+
+.student-wealth-slide .open-page {
+  position: relative;
+  width: 50%;
+  height: 100%;
+  padding: 38px 32px;
+  background: var(--wealth-cream);
+  color: #49341f;
+  box-sizing: border-box;
+}
+
+.student-wealth-slide .tamil-page {
+  border-radius: 13px 3px 4px 13px;
+  transform: skewY(2deg);
+  transform-origin: right center;
+}
+
+.student-wealth-slide .meaning-page {
+  border-radius: 3px 10px 12px 3px;
+  transform: skewY(-1deg);
+  transform-origin: left center;
+  padding-left: 38px;
+}
+
+.student-wealth-slide .book-fold {
+  position: absolute;
+  width: 8px;
+  height: 100%;
+  left: calc(50% - 4px);
+  top: 0;
+  z-index: 4;
+  background: linear-gradient(to right, #c5a474, #f8e6c3, #8d6c43);
+  box-shadow: 0 0 10px #50351b25;
+}
+
+.student-wealth-slide .page-label {
+  display: block;
+  color: #96764c;
+  font-size: 10px;
+  letter-spacing: 2px;
+  margin-bottom: 32px;
+}
+
+.student-wealth-slide .book-tamil {
+  font-family: "Noto Sans Tamil", serif;
+  font-size: 18px;
+  line-height: 2;
+  font-weight: 500;
+  overflow-wrap: anywhere;
+}
+
+.student-wealth-slide .meaning-page > p {
+  font-size: 20px;
+  line-height: 1.5;
+  margin-top: 0;
+}
+
+.student-wealth-slide .page-gold-dot {
+  position: absolute;
+  top: 126px;
+  left: 47px;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #c49a4f;
+  box-shadow: 0 0 0 7px #c49a4f20;
+}
+
+/* Upper-right message */
+
+.student-wealth-slide .wealth-message {
+  position: absolute;
+  z-index: 4;
+  left: 60%;
+  top: 130px;
+}
+
+.student-wealth-slide .wealth-eyebrow {
+  display: block;
+  color: #c39c53;
+  font-size: 11px;
+  letter-spacing: 2px;
+  margin-bottom: 22px;
+}
+
+.student-wealth-slide .wealth-message h2 {
+  font-family: Georgia, "Times New Roman", serif;
+  color: #f4e6cd;
+  font-size: 36px;
+  line-height: 1.16;
+  font-weight: 700;
+}
+
+/* Reading lamp */
+
+.student-wealth-slide .reading-lamp {
+  position: absolute;
+  right: 11%;
+  top: 250px;
+  width: 180px;
+  height: 310px;
+  z-index: 1;
+}
+
+.student-wealth-slide .lamp-shade {
+  position: absolute;
+  top: 0;
+  left: 20px;
+  width: 140px;
+  height: 110px;
+  background: #926d36;
+  clip-path: polygon(16% 0, 83% 0, 100% 100%, 0 100%);
+  border-top: 2px solid #c8a15d;
+  filter: drop-shadow(0 8px 15px #0003);
+}
+
+.student-wealth-slide .lamp-neck {
+  position: absolute;
+  top: 100px;
+  left: 87px;
+  width: 13px;
+  height: 180px;
+  background: linear-gradient(90deg, #9d793d, #d8b35f, #b58c43);
+  transform: rotate(-10deg);
+  transform-origin: top center;
+}
+
+.student-wealth-slide .lamp-base {
+  position: absolute;
+  top: 282px;
+  left: 40px;
+  width: 130px;
+  height: 23px;
+  border-radius: 50%;
+  background: #866333;
+}
+
+.student-wealth-slide .lamp-light {
+  position: absolute;
+  top: 105px;
+  left: -25px;
+  width: 190px;
+  height: 170px;
+  background: #c49a4f0c;
+  filter: blur(20px);
+  border-radius: 50%;
+}
+
+/* Pencil */
+
+.student-wealth-slide .wealth-pencil {
+  position: absolute;
+  bottom: 40px;
+  right: 22%;
+  width: 220px;
+  height: 15px;
+  display: flex;
+  align-items: center;
+  transform: rotate(-23deg);
+  z-index: 2;
+}
+
+.student-wealth-slide .pencil-body {
+  width: 180px;
+  height: 9px;
+  background: linear-gradient(to bottom, #dfb962, #a9823b, #e2bd70);
+}
+
+.student-wealth-slide .pencil-tip {
+  width: 0;
+  height: 0;
+  border-top: 7px solid transparent;
+  border-bottom: 7px solid transparent;
+  border-right: 25px solid #d7b36b;
+}
+
+.student-wealth-slide .pencil-eraser {
+  width: 18px;
+  height: 12px;
+  background: #8c7044;
+}
+
+/* Tamil letter symbol */
+
+.student-wealth-slide .wealth-tamil-symbol {
+  position: absolute;
+  top: 25px;
+  right: 7%;
+  font-family: "Noto Sans Tamil", serif;
+  color: #d5b56f;
+  opacity: .12;
+  font-size: 55px;
+  z-index: 0;
+}
+
+/* =========================
+   SLIDE 5 — DAILY INSPIRATION
+   ========================= */
+
+.daily-section {
+  background: #f1f3eb;
+}
+
+.daily-card {
+  position: relative;
+  overflow: hidden;
+  max-width: 850px;
+  margin: auto;
+  padding: 65px 50px;
+  text-align: center;
+  color: #f7f3e8;
+  background: #244e37;
+  border-radius: 6px;
+}
+
+.daily-card .eyebrow {
+  color: #d4c49a;
+}
+
+.daily-decoration {
+  position: absolute;
+  top: -30px;
+  right: 25px;
+  font-size: 170px;
+  line-height: 1;
+  color: #ffffff0b;
+}
+
+.daily-card h2 {
+  position: relative;
+  margin: 20px 0;
+  font-family: "Playfair Display", serif;
+  font-size: clamp(30px, 4vw, 42px);
+  font-weight: 500;
+}
+
+.daily-card > p:not(.eyebrow):not(.daily-count) {
+  position: relative;
+  max-width: 540px;
+  margin: auto;
+  font-size: 14px;
+  line-height: 1.9;
+  color: #dce4d7;
+}
+
+.button-light {
+  margin-top: 30px;
+  color: #254832;
+  background: #f2ead9;
+}
+
+.daily-count {
+  margin-top: 25px;
+  font-size: 9px;
+  letter-spacing: 2px;
+  color: #c8d6c3;
+}
+
+/* =========================
+   FINAL MESSAGE & FOOTER
+   ========================= */
+
+.final-section {
+  padding: 100px 10%;
+  text-align: center;
+  background: var(--bg);
+}
+
+.final-icon {
+  display: block;
+  font-size: 34px;
+  color: var(--gold);
+}
+
+.final-section h2 {
+  margin: 20px 0;
+}
+
+.final-section > p:not(.eyebrow) {
+  max-width: 530px;
+  margin: 20px auto;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.final-tamil {
+  margin-top: 35px;
+  font-family: "Noto Sans Tamil", sans-serif;
+  color: var(--green);
+  font-size: 20px;
+}
+
+.footer {
+  padding: 30px 7%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+  border-top: 1px solid var(--line);
+  background: var(--surface);
+}
+
+.footer p,
+.footer > a:last-child {
+  font-size: 11px;
+  color: var(--muted);
+}
+
+/* =========================
+   OPTIONAL DARK MODE
+   ========================= */
+
+body.dark-mode {
+  --bg: #171d19;
+  --surface: #202a23;
+  --text: #f1f0e6;
+  --muted: #b0b9af;
+  --line: #374239;
+  --green-light: #26392d;
+  --cream: #e7ddc7;
+}
+
+body.dark-mode .wealth-section,
+body.dark-mode .wisdom-section,
+body.dark-mode .daily-section {
+  background: #1b241e;
+}
+
+body.dark-mode .comparison-card {
+  background: #202a23;
+  border-color: #374239;
+}
+
+body.dark-mode .comparison-card.knowledge {
+  background: #26392d;
+}
+
+body.dark-mode .wisdom-card {
+  background: #202a23;
+}
+
+body.dark-mode .final-section {
+  background: var(--bg);
+}
+
+body.dark-mode .footer {
+  background: var(--surface);
+}
+
+body.dark-mode .hero {
+  background: radial-gradient(ellipse at 78% 48%, #293b2b, transparent 40%), var(--bg);
+}
+
+body.dark-mode .hero h1,
+body.dark-mode .section-heading h2 {
+  color: var(--text);
+}
+
+/* =========================
+   RESPONSIVE DESIGN
+   ========================= */
+
+@media (max-width: 1100px) {
+  .navbar {
+    padding-left: 4%;
+    padding-right: 4%;
+  }
+
+  .navbar nav {
+    gap: 13px;
+  }
+
+  .navbar nav a {
+    font-size: 11px;
+  }
+
+  .student-wealth-slide .wealth-stage {
+    min-height: 760px;
+  }
+
+  .student-wealth-slide .open-book-area {
+    left: 25%;
+    top: 310px;
+    transform: scale(.85);
+    transform-origin: top left;
+  }
+
+  .student-wealth-slide .stacked-books {
+    left: 5%;
+    top: 470px;
+    transform: scale(.8);
+    transform-origin: top left;
+  }
+
+  .student-wealth-slide .wealth-message {
+    left: 60%;
+    top: 110px;
+  }
+
+  .student-wealth-slide .reading-lamp {
+    right: 3%;
+    transform: scale(.8);
+    transform-origin: top right;
+  }
+
+  .wisdom-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 760px) {
+  .navbar {
+    flex-wrap: wrap;
+    gap: 12px;
+    padding: 12px 5%;
+  }
+
+  .navbar nav {
+    order: 3;
+    width: 100%;
+    overflow-x: auto;
+    padding: 5px 0;
+  }
+
+  .navbar nav a {
+    white-space: nowrap;
+  }
+
+  .theme-toggle {
+    margin-left: auto;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+    padding: 60px 7%;
+    gap: 25px;
+  }
+
+  .hero-art {
+    min-height: 390px;
+  }
+
+  .hero h1 {
+    font-size: clamp(42px, 10vw, 64px);
+  }
+
+  .section-padding {
+    padding: 70px 7%;
+  }
+
+  .kural-section {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .kural-card {
+    padding: 30px 22px;
+  }
+
+  .comparison {
+    grid-template-columns: 1fr;
+  }
+
+  .student-wealth-slide .wealth-navbar {
+    min-height: 90px;
+    padding: 15px 5%;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .student-wealth-slide .brand-tamil {
+    font-size: 24px;
+  }
+
+  .student-wealth-slide .wealth-navigation {
+    width: 100%;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    gap: 22px;
+    padding-bottom: 5px;
+  }
+
+  .student-wealth-slide .wealth-navigation a {
+    font-size: 12px;
+    white-space: nowrap;
+  }
+
+  .student-wealth-slide .wealth-stage {
+    min-height: 930px;
+  }
+
+  .student-wealth-slide .wealth-message {
+    left: 8%;
+    top: 35px;
+  }
+
+  .student-wealth-slide .wealth-message h2 {
+    font-size: 30px;
+  }
+
+  .student-wealth-slide .wealth-eyebrow {
+    margin-bottom: 12px;
+  }
+
+  .student-wealth-slide .open-book-area {
+    top: 290px;
+    left: 5%;
+    width: 520px;
+    transform: scale(.68);
+    transform-origin: top left;
+  }
+
+  .student-wealth-slide .stacked-books {
+    top: 590px;
+    left: 8%;
+    width: 260px;
+    transform: scale(.8);
+    transform-origin: top left;
+  }
+
+  .student-wealth-slide .reading-lamp {
+    top: 490px;
+    right: 3%;
+    transform: scale(.6);
+    transform-origin: top right;
+  }
+
+  .student-wealth-slide .wealth-pencil {
+    bottom: 30px;
+    right: 18%;
+    transform: rotate(-23deg) scale(.8);
+  }
+
+  .student-wealth-slide .wealth-tamil-symbol {
+    right: 8%;
+    top: 35px;
+  }
+
+  .daily-card {
+    padding: 50px 25px;
+  }
+
+  .footer {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+@media (max-width: 420px) {
+  .hero-art {
+    transform: scale(.88);
+    transform-origin: center center;
+  }
+
+  .wisdom-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .student-wealth-slide .open-book-area {
+    left: 3%;
+    transform: scale(.58);
+    transform-origin: top left;
+  }
+
+  .student-wealth-slide .stacked-books {
+    left: 5%;
+    transform: scale(.7);
+    transform-origin: top left;
+  }
+
+  .student-wealth-slide .reading-lamp {
+    right: 0;
+    transform: scale(.48);
+    transform-origin: top right;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition-duration: .01ms !important;
+  }
+}
